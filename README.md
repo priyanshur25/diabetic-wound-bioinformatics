@@ -222,13 +222,6 @@ diabetic-wound-bioinformatics/
 
 The analysis scripts and reports are provided to support reproducibility. Package versions and exact installation instructions can be added as part of the final project setup.
 
-## Future Work
-
-- Validate candidate genes using independent diabetic foot ulcer datasets.
-- Compare findings with additional wound-healing transcriptomic datasets.
-- Investigate candidate genes using gene-level literature and network analysis.
-- Perform count-aware differential expression analysis if raw counts become available.
-- Explore experimental validation strategies for selected candidate genes.
 
 ## Acknowledgements
 
