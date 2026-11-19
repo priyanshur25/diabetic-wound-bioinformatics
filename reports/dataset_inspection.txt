@@ -1,0 +1,42 @@
+WEEK 1: DATASET INSPECTION REPORT
+====================================
+
+1. DATASET INFORMATION
+GEO Accession: GSE199939
+Source: NCBI GEO
+Organism: Homo sapiens
+Expression measure: TPM
+
+2. DOWNLOAD INFORMATION
+File: GSE199939_gene.tpm.matrix.annot_-_21.txt.gz
+Download status: Successful
+
+3. DATASET STRUCTURE
+Total rows: 3069 
+Total columns: 25 
+Biological samples: 21 
+Gene identifier: Ensembl Gene ID
+Gene symbol: Available
+Gene description: Available
+
+4. SAMPLE INFORMATION
+Diabetic wound samples: 10 (DW1-DW10)
+Non-diabetic controls: 11 (N1-N11)
+
+5. DATA QUALITY INSPECTION
+Duplicate gene identifiers: 0 
+Total missing values: 11 
+Affected gene: SLC1A5
+Affected gene ID: ENSG00000105281
+Missing values in diabetic samples: 0
+Missing values in control samples: 11
+
+6. INITIAL OBSERVATIONS
+All 11 missing expression values occur in the
+SLC1A5 gene row across non-diabetic controls.
+No expression values were modified or replaced.
+
+7. CONCLUSION
+The GSE199939 expression matrix was successfully
+downloaded and inspected. It contains 3069 gene
+records and 21 biological samples.

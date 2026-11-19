@@ -1,0 +1,30 @@
+
+# Python virtual environments
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# RStudio temporary files
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# macOS files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE and editor files
+.vscode/
+
+# Temporary files
+*.tmp
+*.log
+
+# Raw datasets
+data/raw/
+
+# Keep an explanation of the raw data directory
+!data/raw/README.md

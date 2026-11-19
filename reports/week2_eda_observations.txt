@@ -1,0 +1,44 @@
+WEEK 2: EXPLORATORY DATA ANALYSIS
+
+Dataset: GSE199939
+
+1. Dataset contains 61,343 rows and 25 columns.
+2. There are 21 samples:
+   - 10 diabetic wound samples
+   - 11 non-diabetic control samples
+
+3. No missing expression values were detected.
+4. No duplicate gene identifiers were detected.
+5. 21,387 genes showed zero expression across all samples.
+6. Expression distributions showed a large number of
+   low-expression genes and several high-expression outliers.
+7. Median expression was zero across samples.
+8. Mean TPM values were approximately 16.30 across samples.
+
+Conclusion:
+The expression data show a highly skewed distribution.
+Log2(TPM + 1) transformation was applied for visualization.
+Further analysis will investigate sample relationships
+and identify differentially expressed genes.
+
+9. PCA ANALYSIS
+
+Genes before filtering: 61,343
+Genes after filtering: 20,187
+
+Explained variance:
+PC1: 40.95%
+PC2: 17.26%
+Combined: 58.21%
+
+Observations:
+- Diabetic wound samples cluster on the negative side of PC1.
+- Control samples cluster on the positive side of PC1.
+- DW4 is separated from the other diabetic wound samples.
+- Control samples show considerable variation along PC2.
+
+Conclusion:
+PCA suggests distinct gene-expression profiles between
+diabetic wound and control samples. Differential expression
+analysis is required to identify the genes contributing
+to these differences.

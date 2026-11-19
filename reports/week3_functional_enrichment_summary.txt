@@ -1,0 +1,134 @@
+# Week 3: Functional Enrichment Analysis
+
+## 1. Objective
+
+The objective of Week 3 was to identify biological processes and molecular pathways associated with differentially expressed genes in diabetic wound samples using Gene Ontology (GO) and KEGG enrichment analysis.
+
+## 2. Methodology
+
+- Mapped Ensembl gene IDs to Entrez Gene IDs using `clusterProfiler` and `org.Hs.eg.db`.
+- Used the filtered background gene set from differential expression analysis as the enrichment universe.
+- Performed GO Biological Process over-representation analysis using `enrichGO()`.
+- Performed KEGG pathway over-representation analysis using `enrichKEGG()`.
+- Conducted separate enrichment analyses for upregulated and downregulated genes.
+- Applied Benjamini-Hochberg multiple-testing correction.
+- Used adjusted p-value < 0.05 as the significance criterion.
+
+## 3. Gene Mapping
+
+| Category | Input genes | Unique mapped Entrez IDs |
+|---|---:|---:|
+| Background | 20,187 | 17,335 |
+| Significant DEGs | 3,880 | 3,440 |
+| Upregulated | 1,326 | 1,273 |
+| Downregulated | 2,554 | 2,167 |
+
+Upregulated and downregulated gene lists had no overlapping Entrez IDs.
+
+## 4. GO Biological Process Results
+
+Combined significant DEGs:
+- 553 enriched GO terms.
+
+Upregulated genes:
+- 819 enriched GO terms.
+- Major findings included extracellular matrix organization, leukocyte migration, chemotaxis, myeloid leukocyte activation and angiogenesis. 
+  Angiogenesis-related terms were significantly enriched, including angiogenesis (98 genes, adjusted p-value = 3.12 × 10⁻¹⁶), positive regulation of angiogenesis and sprouting angiogenesis.
+- 142 enriched GO terms.
+- Major findings included epidermis development, skin development, keratinization, keratinocyte differentiation and establishment of the skin barrier.
+
+## 5. KEGG Results
+
+Combined significant DEGs:
+- 26 enriched pathways.
+
+Upregulated genes:
+- 35 enriched pathways.
+- Important pathways included integrin signalling, cell cycle, phagocytosis, ECM-receptor interaction, cytokine-cytokine receptor interaction and IL-17 signalling.
+
+Downregulated genes:
+- 32 enriched pathways.
+- Important pathways included cornified envelope formation, arachidonic acid metabolism, linoleic acid metabolism, cadherin signalling and alpha-linolenic acid metabolism.
+
+## 6. Biological Interpretation
+
+The enrichment results indicate three major biological patterns:
+
+1. Increased expression of genes associated with inflammatory and immune responses, including leukocyte migration, phagocytosis and cytokine signalling.
+
+2. Increased expression of genes associated with extracellular matrix organization, integrin signalling and cell adhesion, suggesting changes in tissue remodelling.
+
+3. Reduced expression of genes associated with epidermal differentiation and skin-barrier formation, including keratinization, keratinocyte differentiation and cornified envelope formation.
+
+Together, these findings suggest an imbalance between inflammatory/remodelling-associated expression and epidermal repair-associated expression in diabetic wound samples.
+
+## 7. Limitations
+
+- Enrichment results depend on the quality and coverage of gene annotation.
+- Some Ensembl IDs could not be mapped to Entrez IDs.
+- GO and KEGG terms can contain overlapping genes and biologically related annotations.
+- Over-representation analysis does not directly measure pathway activity.
+- The differential expression analysis used log2-transformed TPM values with limma, rather than raw-count-based RNA-seq analysis.
+- Independent experimental validation is required to confirm the biological interpretation.
+
+## 8. Output Files
+
+### Tables
+- background_gene_mapping.csv
+- significant_gene_mapping.csv
+- upregulated_gene_mapping.csv
+- downregulated_gene_mapping.csv
+- GO_BP_upregulated_results.csv
+- GO_BP_downregulated_results.csv
+- KEGG_upregulated_results.csv
+- KEGG_downregulated_results.csv
+
+### Plots
+- GO_BP_upregulated.png
+- GO_BP_downregulated.png
+- KEGG_upregulated.png
+- KEGG_downregulated.png
+
+## 9. Week 3 Conclusion
+
+Functional enrichment analysis identified inflammatory response, extracellular matrix remodelling and epidermal differentiation as major biological themes associated with diabetic wound gene expression.
+
+The findings provide a foundation for further investigation of candidate genes and pathways involved in impaired diabetic wound healing.
+
+## 10. Preliminary Literature Validation
+
+To assess the biological relevance of the identified candidate genes, selected differentially expressed genes were compared with findings reported in independent diabetic foot ulcer (DFU) and wound-healing transcriptomic studies.
+
+### 10.1 Upregulated Candidate Genes
+
+- **AURKA:** Aurora kinase A is associated with mitotic regulation and cell proliferation. Its upregulation has also been reported in independent diabetic foot ulcer research.
+- **APLN:** Apelin is involved in vascular and angiogenesis-related signalling. Its upregulation makes it an interesting candidate for investigating vascular responses in diabetic wounds.
+- **COL10A1:** Collagen type X alpha 1 chain is an extracellular matrix-associated gene. Its increased expression may reflect changes in extracellular matrix composition and tissue remodelling.
+- **MYBL2:** MYBL2 is a transcription factor associated with cell-cycle regulation and proliferation. Increased expression has also been reported in diabetic foot ulcer-related research.
+
+### 10.2 Downregulated Candidate Genes
+
+- **TNXB:** Tenascin XB is an extracellular matrix-associated protein involved in tissue organization. Its reduced expression may be relevant to changes in extracellular matrix structure.
+- **PPL:** Periplakin is involved in epithelial structural organization and cellular junctions. Its downregulation is consistent with the enrichment of processes related to epidermal differentiation and skin-barrier formation.
+- **VIPR1:** Vasoactive intestinal peptide receptor 1 participates in neuropeptide signalling. Its reduced expression has been reported in independent diabetic foot ulcer transcriptomic analyses.
+
+### 10.3 Literature Sources
+
+The following publications and resources were considered for preliminary comparison:
+
+1. [Independent diabetic foot ulcer transcriptomic analysis](https://pmc.ncbi.nlm.nih.gov/articles/PMC13170874/)
+2. [AURKA and ferroptosis-related diabetic foot ulcer study](https://pubmed.ncbi.nlm.nih.gov/40024299/)
+3. [Diabetic foot ulcer wound-healing transcriptomic study](https://pmc.ncbi.nlm.nih.gov/articles/PMC10332306/)
+4. [Integrated skin transcriptomics in diabetic foot ulcers](https://pmc.ncbi.nlm.nih.gov/articles/PMC7506837/)
+
+### 10.4 Interpretation and Limitations
+
+Several candidate genes identified in this analysis have also been discussed in independent diabetic foot ulcer or wound-healing studies. These overlaps provide preliminary support for their biological relevance.
+
+The selected genes represent different aspects of wound biology, including cell proliferation, vascular signalling, extracellular matrix organization and epithelial structure.
+
+However, differences in study populations, tissue composition, experimental methods and comparison groups may influence gene-expression patterns. Therefore, agreement with published findings should be interpreted as supporting evidence rather than definitive validation.
+
+Furthermore, increased expression of a gene in diabetic wounds does not necessarily indicate a beneficial effect on healing. It may represent a compensatory response, inflammation or cellular stress.
+
+Further investigation using independent datasets and experimental validation methods, such as RT-qPCR, would be required to establish the roles of these candidate genes in diabetic wound healing.
