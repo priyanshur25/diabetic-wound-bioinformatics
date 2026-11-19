@@ -108,6 +108,38 @@ Three major biological themes emerged:
 
 Together, these findings suggest altered inflammatory, vascular, tissue-remodelling, and epidermal-associated gene-expression patterns in diabetic wound samples.
 
+## Visual Results
+
+### 1. Principal Component Analysis (PCA)
+
+PCA shows separation between diabetic wound and control samples, with PC1 explaining 40.95% of the variance and PC2 explaining 17.26%.
+
+![PCA of diabetic wound and control samples](results/plots/PCA_diabetic_wound.png)
+
+### 2. Differential Expression Analysis
+
+The volcano plot highlights significantly upregulated and downregulated genes using FDR < 0.05 and |logFC| > 1.
+
+![Volcano plot](results/plots/volcano_plot.png)
+
+### 3. Heatmap of Top 50 Differentially Expressed Genes
+
+The heatmap displays relative expression patterns of the top 50 differentially expressed genes across all samples.
+
+![Heatmap of top 50 DEGs](results/plots/heatmap_top50_DEGs.png)
+
+### 4. Gene Ontology Enrichment
+
+GO Biological Process enrichment highlights biological processes associated with diabetic wound samples.
+
+![GO Biological Process enrichment](results/plots/GO_BP_dotplot.png)
+
+### 5. KEGG Pathway Enrichment
+
+KEGG enrichment identifies pathways associated with differences between diabetic wound and control samples.
+
+![KEGG pathway enrichment](results/plots/KEGG_dotplot.png)
+
 ## Candidate Genes
 
 Selected genes for further biological investigation include:
